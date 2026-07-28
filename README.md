@@ -52,6 +52,7 @@ Jenkins-SonarQube-Qualities-Gate-Pipeline/
 │
 ├── src/
 │
+├── Architecture.png
 ├── Jenkinsfile
 ├── pom.xml
 ├── sonar-project.properties
