@@ -213,21 +213,6 @@ Through this project, I gained hands-on experience with:
 
 ---
 
-## 📸 Screenshots
-
-Include screenshots of:
-
-- Jenkins Dashboard
-- Jenkins Pipeline Configuration
-- Successful Pipeline Execution
-- SonarQube Dashboard
-- SonarQube Project Overview
-- Quality Gate Status
-- Issues Report (Bugs, Vulnerabilities, Code Smells)
-- Jenkins Console Output
-
----
-
 ## ✅ Project Outcome
 
 Successfully integrated SonarQube with a Jenkins CI pipeline to automate static code analysis and enforce Quality Gates. The pipeline automatically checks code quality during the build process, providing immediate feedback on bugs, vulnerabilities, code smells, and maintainability issues. This project demonstrates DevOps best practices for implementing continuous code quality inspection and maintaining high software quality standards.
