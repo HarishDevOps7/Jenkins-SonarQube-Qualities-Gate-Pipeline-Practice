@@ -1,19 +1,12 @@
+
 pipeline {
     agent any
 
-    tools {
-        maven 'Maven-3'
+    environment {
+        PATH = "/opt/maven/bin:$PATH"
     }
 
     stages {
-
-        stage('Checkout') {
-            steps {
-                git branch: 'main',
-                url: 'https://github.com/ManojKumar8244/Jenkins-SonarQube-Qualities-Gate-Pipeline.git'
-            }
-        }
-
         stage('Build') {
             steps {
                 sh 'mvn clean package'
@@ -22,14 +15,17 @@ pipeline {
 
         stage('SonarQube Analysis') {
             steps {
-                withSonarQubeEnv('SonarCloud') {
+                withSonarQubeEnv('SonarQube') {
                     sh '''
-                    mvn sonar:sonar \
-                    -Dsonar.projectKey=Jenkins-SonarQube-Qualities-Gate-Pipeline \
-                    -Dsonar.organization=manojkumar8244
+                        /opt/maven/bin/mvn \
+                          org.sonarsource.scanner.maven:sonar-maven-plugin:5.8.0.7211:sonar \
+                          -Dsonar.organization=sonarqubepractice-c07 \
+                          -Dsonar.projectKey=saidemy01-keyy_TestProject \
+                          -Dsonar.host.url=https://sonarcloud.io
                     '''
                 }
             }
         }
     }
 }
+
